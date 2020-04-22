@@ -21,5 +21,10 @@ describe('Creneau', () => {
 
     expect(() => { new Creneau(date1, 1 * 24 * 60 * 60 * 1000) }).toThrowError();
   });
+  it('cant be created due weekend', () => {
+    const dateString = '2020-04-24T00:00:00';
+
+    const date1 = new Date(dateString);
+    
 
 });
