@@ -23,5 +23,6 @@ describe('Creneau', () => {
 
     expect( () => { return new Creneau(date1, aDayMs) }).toThrowError();
   });
+  
 
 });
