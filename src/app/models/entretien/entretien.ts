@@ -1,5 +1,6 @@
 import { Creneau } from '../creneau/creneau';
 import { Salle } from '../salle/salle';
+import {Candidat} from "../candidat/candidat";
 
 export enum EntretienStatut {
   attente,
@@ -12,11 +13,11 @@ export class Entretien {
   public statut: EntretienStatut;
   private creneau: Creneau;
   private recruteur: string;
-  private candidat: string;
+  private candidat: Candidat;
   public raison: string;
   private salle: Salle;
 
-  constructor(_entretienId: number, _statut: EntretienStatut, _creneau: Creneau, _recruteur: string, _candidat: string, _salle: Salle) {
+  constructor(_entretienId: number, _statut: EntretienStatut, _creneau: Creneau, _recruteur: string, _candidat: Candidat, _salle: Salle) {
     this.entretienId = _entretienId;
     this.statut = _statut;
     this.creneau = _creneau;

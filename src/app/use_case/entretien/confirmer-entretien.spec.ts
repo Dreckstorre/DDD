@@ -3,6 +3,7 @@ import {Entretien, EntretienStatut} from "../../models/entretien/entretien";
 import {Creneau} from "../../models/creneau/creneau";
 import {Materiel, MaterielType} from "../../models/materiel/materiel";
 import {Salle} from "../../models/salle/salle";
+import {Candidat, Competence} from "../../models/candidat/candidat";
 
 describe('ConfirmerEntretien', () => {
 
@@ -13,7 +14,8 @@ describe('ConfirmerEntretien', () => {
   const statut: EntretienStatut = EntretienStatut.attente;
   const creneau: Creneau = new Creneau(date1, dureeMs);
   const recruteur: string = "toto";
-  const candidat: string = "titi";
+  const competences: Array<Competence> = [Competence.net, Competence.java];
+  const candidat: Candidat = new Candidat("Paul", "paul@mail.com", competences);
   const raison: string = "patate";
   const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
   const salle: Salle = new Salle("salle 200", materiels, 5);

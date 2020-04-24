@@ -3,6 +3,7 @@ import { Creneau } from '../../models/creneau/creneau';
 import {Salle} from "../../models/salle/salle";
 import {Materiel, MaterielType} from "../../models/materiel/materiel";
 import {AnnulerEntretien} from "./annuler-entretien";
+import {Candidat, Competence} from "../../models/candidat/candidat";
 
 const dateString: string = '2020-04-22T00:00:00';
 const date1: Date = new Date(dateString);
@@ -11,7 +12,8 @@ const entretienId: number = 0;
 const statut: EntretienStatut = EntretienStatut.annule;
 const creneau: Creneau = new Creneau(date1, dureeMs);
 const recruteur: string = "toto";
-const candidat: string = "titi";
+const competences: Array<Competence> = [Competence.net, Competence.java];
+const candidat: Candidat = new Candidat("Paul", "paul@mail.com", competences);
 const raison: string = "fun";
 const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
 const salle: Salle = new Salle("salle 200", materiels, 5);
