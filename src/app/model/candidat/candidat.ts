@@ -6,7 +6,7 @@ export enum Competence {
 
 export class Candidat {
 
-  private id: number;
+  public id: number;
   private nom: string;
   private mail: string;
   private competence: Array<Competence>;
