@@ -21,6 +21,11 @@ export class SalleStorageService {
   }
 
   public deleteCandidat(id: number){
+    this.candidats.find((candidat, index) =>{
 
+      if(candidat.id === id){
+        this.candidats.splice(index);
+      }
+    })
   }
 }
