@@ -1,7 +1,7 @@
-import { Entretien, EntretienStatut } from '../../models/entretien';
-import { Creneau } from '../../models/creneau';
-import {Salle} from "../../models/salle";
-import {Materiel, MaterielType} from "../../models/materiel";
+import { Entretien, EntretienStatut } from '../../models/entretien/entretien';
+import { Creneau } from '../../models/creneau/creneau';
+import {Salle} from "../../models/salle/salle";
+import {Materiel, MaterielType} from "../../models/materiel/materiel";
 import {AnnulerEntretien} from "./annuler-entretien";
 
 const dateString: string = '2020-04-22T00:00:00';

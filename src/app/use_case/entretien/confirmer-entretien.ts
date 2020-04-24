@@ -1,4 +1,4 @@
-import {Entretien, EntretienStatut} from "../../models/entretien";
+import {Entretien, EntretienStatut} from "../../models/entretien/entretien";
 
 export class ConfirmerEntretien {
 

@@ -1,4 +1,4 @@
-import {Materiel} from "./materiel";
+import {Materiel} from "../materiel/materiel";
 
 export class Salle {
 

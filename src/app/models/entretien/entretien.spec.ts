@@ -1,7 +1,7 @@
 import { Entretien, EntretienStatut } from './entretien';
-import { Creneau } from './creneau';
-import {Salle} from "./salle";
-import {Materiel, MaterielType} from "./materiel";
+import { Creneau } from '../creneau/creneau';
+import {Salle} from "../salle/salle";
+import {Materiel, MaterielType} from "../materiel/materiel";
 
 describe('Entretien', () => {
   const dateString: string = '2020-04-22T00:00:00';

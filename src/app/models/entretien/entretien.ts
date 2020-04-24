@@ -1,5 +1,5 @@
-import { Creneau } from './creneau';
-import { Salle } from './salle';
+import { Creneau } from '../creneau/creneau';
+import { Salle } from '../salle/salle';
 
 export enum EntretienStatut {
   attente,
