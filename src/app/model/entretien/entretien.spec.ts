@@ -1,8 +1,8 @@
 import {Entretien, EntretienStatut} from './entretien';
 import {Creneau} from './creneau';
 import {Salle} from "./salle";
-import {Materiel, MaterielType} from "../materiel/materiel";
 import {Candidat, Competence} from "./candidat";
+import { Recruteur } from './recruteur';
 
 describe('Entretien', () => {
   const dateString: string = '2020-04-22T00:00:00';
@@ -11,23 +11,22 @@ describe('Entretien', () => {
   const entretienId: number = 0;
   const statut: EntretienStatut = EntretienStatut.attente;
   const creneau: Creneau = new Creneau(date1, dureeMs);
-  const recruteur: string = "toto";
   const competences: Array<Competence> = [Competence.net, Competence.java];
-  const candidat: Candidat = new Candidat("Paul", "paul@mail.com", competences);
+  const recruteur: Array<Recruteur> = [new Recruteur(0, "michel", "JackyMichel@mail.fr", competences)];
+  const candidat: Candidat = new Candidat(0, "Paul", "paul@mail.com", competences);
   const raison: string = "patate";
-  const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
-  const salle: Salle = new Salle("salle 200", materiels, 5);
+  const salle: Salle = new Salle(0, "salle 200", 5);
 
 
 
   it('should create an instance', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat, salle);
+    const entretien = new Entretien(entretienId, creneau, recruteur, candidat, salle);
 
     expect(entretien).toBeTruthy();
   });
 
   it('Try nothing', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat, salle);
+    const entretien = new Entretien(entretienId, creneau, recruteur, candidat, salle);
 
     expect(entretien.statut).toEqual(EntretienStatut.attente);
   });

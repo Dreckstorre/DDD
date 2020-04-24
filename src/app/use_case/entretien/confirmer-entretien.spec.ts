@@ -1,9 +1,9 @@
 import { ConfirmerEntretien } from './confirmer-entretien';
 import {Entretien, EntretienStatut} from "../../model/entretien/entretien";
 import {Creneau} from "../../model/entretien/creneau";
-import {Materiel, MaterielType} from "../../model/materiel/materiel";
 import {Salle} from "../../model/entretien/salle";
 import {Candidat, Competence} from "../../model/entretien/candidat";
+import { Recruteur } from 'src/app/model/entretien/recruteur';
 
 describe('ConfirmerEntretien', () => {
 
@@ -11,17 +11,16 @@ describe('ConfirmerEntretien', () => {
   const date1: Date = new Date(dateString);
   const dureeMs: number = 35;
   const entretienId: number = 0;
-  const statut: EntretienStatut = EntretienStatut.attente;
+  const statut: EntretienStatut = EntretienStatut.annule;
   const creneau: Creneau = new Creneau(date1, dureeMs);
-  const recruteur: string = "toto";
   const competences: Array<Competence> = [Competence.net, Competence.java];
-  const candidat: Candidat = new Candidat("Paul", "paul@mail.com", competences);
-  const raison: string = "patate";
-  const materiels: Array<Materiel> = [new Materiel(1,"projecteur", MaterielType.Informatique), new Materiel(1,"lampe", MaterielType.Lumière)];
-  const salle: Salle = new Salle("salle 200", materiels, 5);
+  const recruteur: Array<Recruteur> = [new Recruteur(0, "michel", "JackyMichel@mail.fr", competences)];
+  const candidat: Candidat = new Candidat(1, "Paul", "paul@mail.com", competences);
+  const raison: string = "fun";
+  const salle: Salle = new Salle(1, "salle 200", 5);
 
   it('should confirm an entretien', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat, salle);
+    const entretien = new Entretien(entretienId, creneau, recruteur, candidat, salle);
     const confirmerEntretien = new ConfirmerEntretien();
 
     confirmerEntretien.confirmer(entretien);

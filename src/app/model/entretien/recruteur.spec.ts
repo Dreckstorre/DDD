@@ -1,10 +1,10 @@
-import { Candidat, Competence } from './candidat';
+import { Recruteur } from './recruteur';
 import { EntretienStatut } from './entretien';
 import { Creneau } from './creneau';
-import { Recruteur } from './recruteur';
+import { Competence, Candidat } from './candidat';
 import { Salle } from './salle';
 
-describe('Candidat', () => {
+describe('Recruteur', () => {
   const dateString: string = '2020-04-22T00:00:00';
   const date1: Date = new Date(dateString);
   const dureeMs: number = 35;
@@ -18,5 +18,6 @@ describe('Candidat', () => {
   const salle: Salle = new Salle(0, "salle 200", 5);
 
   it('should create an instance', () => {
+    expect(new Recruteur(0,"","",[])).toBeTruthy();
   });
 });
