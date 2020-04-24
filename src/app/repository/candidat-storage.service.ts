@@ -20,7 +20,7 @@ export class CandidatStorageService {
     return this.candidats.find((candidat: Candidat) => candidat.id === id)
   }
 
-  public deleteCandidat(id: number){
+  public removeCandidat(id: number){
     this.candidats.find((candidat, index) =>{
 
       if(candidat.id === id){
