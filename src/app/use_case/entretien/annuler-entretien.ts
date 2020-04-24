@@ -1,4 +1,4 @@
-import {Entretien, EntretienStatut} from "../../models/entretien/entretien";
+import {Entretien, EntretienStatut} from "../../model/entretien/entretien";
 
 export class AnnulerEntretien {
 
