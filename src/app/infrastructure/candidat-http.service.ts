@@ -1,23 +1,32 @@
 import { Injectable } from '@angular/core';
-import {CandidatStorageService} from "../repository/candidat-storage.service";
-import {Candidat} from "../model/candidat/candidat";
+import {Candidat} from "../model/entretien/candidat";
+import {CandidatsInterface} from "../model/entretien/candidats-interface";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CandidatHttpService {
+export class CandidatHttpService implements CandidatsInterface{
 
-  constructor(private candidatRepository: CandidatStorageService) { }
+  private candidats: Array<Candidat>;
 
-  public getCandidatById(id: number): Candidat{
-    return this.candidatRepository.findCandidatById(id);
+  constructor() {
+    this.candidats = new Array<Candidat>();
   }
 
-  public deleteCandidat(id: number): void{
-    this.candidatRepository.removeCandidat(id);
+  public createCandidat(candidat: Candidat): void{
+    this.candidats.push(candidat);
   }
 
-  public postCandidat(candidat: Candidat): void{
-    this.candidatRepository.createCandidat(candidat);
+  public findCandidatById(id: number): Candidat{
+    return this.candidats.find((candidat: Candidat) => candidat.id === id)
+  }
+
+  public removeCandidat(id: number){
+    this.candidats.find((candidat, index) =>{
+
+      if(candidat.id === id){
+        this.candidats.splice(index, 1);
+      }
+    })
   }
 }

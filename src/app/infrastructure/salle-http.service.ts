@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Salle} from "../model/salle/salle";
+import {Salle} from "../model/entretien/salle";
+import {SallesInterface} from "../model/entretien/salles-interface";
 
 @Injectable({
   providedIn: 'root'
 })
-export class SalleStorageService {
+export class SalleHttpService implements SallesInterface{
 
   private salles: Array<Salle>;
 

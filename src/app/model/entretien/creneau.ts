@@ -10,7 +10,6 @@ export enum JoursDeLaSemaine {
 
 export class Creneau {
   private readonly WEEKEND_ERROR = 'ITS THE WEEKEND DUDE';
-
   private readonly date: number;
   private readonly heureDebut: number;
   private readonly heureFin: number;

@@ -1,9 +1,9 @@
 import { Entretien, EntretienStatut } from '../../model/entretien/entretien';
-import { Creneau } from '../../model/creneau/creneau';
-import {Salle} from "../../model/salle/salle";
+import { Creneau } from '../../model/entretien/creneau';
+import {Salle} from "../../model/entretien/salle";
 import {Materiel, MaterielType} from "../../model/materiel/materiel";
 import {AnnulerEntretien} from "./annuler-entretien";
-import {Candidat, Competence} from "../../model/candidat/candidat";
+import {Candidat, Competence} from "../../model/entretien/candidat";
 
 const dateString: string = '2020-04-22T00:00:00';
 const date1: Date = new Date(dateString);

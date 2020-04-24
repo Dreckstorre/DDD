@@ -1,9 +1,9 @@
 import { ConfirmerEntretien } from './confirmer-entretien';
 import {Entretien, EntretienStatut} from "../../model/entretien/entretien";
-import {Creneau} from "../../model/creneau/creneau";
+import {Creneau} from "../../model/entretien/creneau";
 import {Materiel, MaterielType} from "../../model/materiel/materiel";
-import {Salle} from "../../model/salle/salle";
-import {Candidat, Competence} from "../../model/candidat/candidat";
+import {Salle} from "../../model/entretien/salle";
+import {Candidat, Competence} from "../../model/entretien/candidat";
 
 describe('ConfirmerEntretien', () => {
 

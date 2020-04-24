@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MaterielHttpService } from './materiel-http.service';
+import { CreneauHttpService } from './creneau-http.service';
 
-describe('MaterielHttpService', () => {
-  let service: MaterielHttpService;
+describe('CreneauHttpService', () => {
+  let service: CreneauHttpService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MaterielHttpService);
+    service = TestBed.inject(CreneauHttpService);
   });
 
   it('should be created', () => {
