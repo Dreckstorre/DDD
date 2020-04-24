@@ -2,14 +2,16 @@ import {Materiel} from "../materiel/materiel";
 
 export class Salle {
 
+  private id: number;
   private nom: string;
   private materiel: Array<Materiel>;
   private contenance: number;
 
 
-  constructor(_nom: string, _materiel: Array<Materiel>, _contenance: number) {
-    this.nom = _nom;
-    this.materiel = _materiel;
-    this.contenance = _contenance;
+  constructor(id: number, nom: string, materiel: Array<Materiel>, contenance: number) {
+    this.id = id;
+    this.nom = nom;
+    this.materiel = materiel;
+    this.contenance = contenance;
   }
 }

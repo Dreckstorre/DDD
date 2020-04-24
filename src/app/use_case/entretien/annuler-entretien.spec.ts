@@ -13,10 +13,10 @@ const statut: EntretienStatut = EntretienStatut.annule;
 const creneau: Creneau = new Creneau(date1, dureeMs);
 const recruteur: string = "toto";
 const competences: Array<Competence> = [Competence.net, Competence.java];
-const candidat: Candidat = new Candidat("Paul", "paul@mail.com", competences);
+const candidat: Candidat = new Candidat(1, "Paul", "paul@mail.com", competences);
 const raison: string = "fun";
-const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
-const salle: Salle = new Salle("salle 200", materiels, 5);
+const materiels: Array<Materiel> = [new Materiel(1,"projecteur", MaterielType.Informatique), new Materiel(1, "lampe", MaterielType.Lumière)];
+const salle: Salle = new Salle(1, "salle 200", materiels, 5);
 
 describe('AnnulerEntretien', () => {
   it('should cancel entretien', () => {

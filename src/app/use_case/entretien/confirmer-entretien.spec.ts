@@ -17,7 +17,7 @@ describe('ConfirmerEntretien', () => {
   const competences: Array<Competence> = [Competence.net, Competence.java];
   const candidat: Candidat = new Candidat("Paul", "paul@mail.com", competences);
   const raison: string = "patate";
-  const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
+  const materiels: Array<Materiel> = [new Materiel(1,"projecteur", MaterielType.Informatique), new Materiel(1,"lampe", MaterielType.Lumière)];
   const salle: Salle = new Salle("salle 200", materiels, 5);
 
   it('should confirm an entretien', () => {
