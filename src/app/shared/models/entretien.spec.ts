@@ -1,5 +1,7 @@
 import { Entretien, EntretienStatut } from './entretien';
 import { Creneau } from './creneau';
+import {Salle} from "./salle";
+import {Materiel, MaterielType} from "./materiel";
 
 describe('Entretien', () => {
   const dateString: string = '2020-04-22T00:00:00';
@@ -11,31 +13,21 @@ describe('Entretien', () => {
   const recruteur: string = "toto";
   const candidat: string = "titi";
   const raison: string = "patate";
+  const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
+  const salle: Salle = new Salle("salle 200", materiels, 5);
+
+
 
   it('should create an instance', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat);
+    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat, salle);
 
     expect(entretien).toBeTruthy();
   });
 
   it('Try nothing', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat);
+    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat, salle);
 
-    expect(entretien.getStatut()).toEqual(EntretienStatut.attente);
+    expect(entretien.statut).toEqual(EntretienStatut.attente);
   });
 
-  it('Try cancelling', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat);
-    entretien.annuler(raison);
-
-    expect(entretien.getStatut()).toEqual(EntretienStatut.annule);
-    expect(entretien.getRaison()).toEqual(raison);
-  });
-
-  it('Try to confirm', () => {
-    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat);
-    entretien.confirmer();
-
-    expect(entretien.getStatut()).toEqual(EntretienStatut.confirme);
-  });
 });

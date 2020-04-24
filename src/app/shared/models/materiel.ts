@@ -1,5 +1,5 @@
 
-export enum materielType {
+export enum MaterielType {
   "Lumière",
   "Mobilier",
   "Informatique",
@@ -9,6 +9,11 @@ export enum materielType {
 export class Materiel {
 
   private nom: string;
-  private type: materielType;
+  private type: MaterielType;
 
+
+  constructor(nom: string, type: MaterielType) {
+    this.nom = nom;
+    this.type = type;
+  }
 }

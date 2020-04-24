@@ -1,7 +1,29 @@
 import { ConfirmerEntretien } from './confirmer-entretien';
+import {Entretien, EntretienStatut} from "../../models/entretien";
+import {Creneau} from "../../models/creneau";
+import {Materiel, MaterielType} from "../../models/materiel";
+import {Salle} from "../../models/salle";
 
 describe('ConfirmerEntretien', () => {
-  it('should create an instance', () => {
-    expect(new ConfirmerEntretien()).toBeTruthy();
+
+  const dateString: string = '2020-04-22T00:00:00';
+  const date1: Date = new Date(dateString);
+  const dureeMs: number = 35;
+  const entretienId: number = 0;
+  const statut: EntretienStatut = EntretienStatut.attente;
+  const creneau: Creneau = new Creneau(date1, dureeMs);
+  const recruteur: string = "toto";
+  const candidat: string = "titi";
+  const raison: string = "patate";
+  const materiels: Array<Materiel> = [new Materiel("projecteur", MaterielType.Informatique), new Materiel("lampe", MaterielType.Lumière)];
+  const salle: Salle = new Salle("salle 200", materiels, 5);
+
+  it('should confirm an entretien', () => {
+    const entretien = new Entretien(entretienId, statut, creneau, recruteur, candidat, salle);
+    const confirmerEntretien = new ConfirmerEntretien();
+
+    confirmerEntretien.confirmer(entretien);
+
+    expect(entretien.statut).toEqual(EntretienStatut.confirme);
   });
 });

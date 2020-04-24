@@ -26,20 +26,5 @@ export class Entretien {
     this.salle = _salle;
   }
 
-  public getStatut(): EntretienStatut {
-    return this.statut;
-  }
 
-  public getRaison(): string {
-    return this.raison;
-  }
-
-  public confirmer(): void {
-    this.statut = EntretienStatut.confirme;
-  }
-
-  public annuler(_raison: string): void {
-    this.raison = _raison;
-    this.statut = EntretienStatut.annule;
-  }
 }
