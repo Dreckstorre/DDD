@@ -27,5 +27,4 @@ export class Entretien {
     this.salle = _salle;
   }
 
-
 }
