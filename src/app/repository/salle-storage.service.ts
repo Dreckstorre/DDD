@@ -24,7 +24,7 @@ export class SalleStorageService {
     this.candidats.find((candidat, index) =>{
 
       if(candidat.id === id){
-        this.candidats.splice(index);
+        this.candidats.splice(index, 1);
       }
     })
   }
