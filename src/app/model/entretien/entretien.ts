@@ -9,7 +9,7 @@ export enum EntretienStatut {
 }
 
 export class Entretien {
-  private entretienId: number;
+  public id: number;
   public statut: EntretienStatut;
   private creneau: Creneau;
   private recruteur: string;
@@ -18,7 +18,7 @@ export class Entretien {
   private salle: Salle;
 
   constructor(_entretienId: number, _statut: EntretienStatut, _creneau: Creneau, _recruteur: string, _candidat: Candidat, _salle: Salle) {
-    this.entretienId = _entretienId;
+    this.id = _entretienId;
     this.statut = _statut;
     this.creneau = _creneau;
     this.recruteur = _recruteur;

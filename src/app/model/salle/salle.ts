@@ -2,7 +2,7 @@ import {Materiel} from "../materiel/materiel";
 
 export class Salle {
 
-  private id: number;
+  public id: number;
   private nom: string;
   private materiel: Array<Materiel>;
   private contenance: number;

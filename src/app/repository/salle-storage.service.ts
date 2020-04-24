@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
-import {Candidat} from "../model/candidat/candidat";
+import {Salle} from "../model/salle/salle";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SalleStorageService {
 
-  private candidats: Array<Candidat>;
+  private salles: Array<Salle>;
 
   constructor() {
-    this.candidats = new Array<Candidat>();
+    this.salles = new Array<Salle>();
   }
 
-  public createCandidat(candidat: Candidat): void{
-    this.candidats.push(candidat);
+  public createSalle(salle: Salle): void{
+    this.salles.push(salle);
   }
 
-  public findCandidatById(id: number): Candidat{
-    return this.candidats.find((candidat: Candidat) => candidat.id === id)
+  public findSalleById(id: number): Salle{
+    return this.salles.find((salle: Salle) => salle.id === id)
   }
 
-  public deleteCandidat(id: number){
-    this.candidats.find((candidat, index) =>{
+  public deleteSalle(id: number){
+    this.salles.find((salle, index) =>{
 
-      if(candidat.id === id){
-        this.candidats.splice(index, 1);
+      if(salle.id === id){
+        this.salles.splice(index, 1);
       }
     })
   }

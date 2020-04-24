@@ -8,7 +8,7 @@ export enum MaterielType {
 
 export class Materiel {
 
-  private id: number;
+  public id: number;
   private nom: string;
   private type: MaterielType;
 
